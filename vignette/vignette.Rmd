@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+
+```{r}
+DEG.list <- Diffgene.lister(Macs2, 
+                            ident.use = "idents", 
+                            comparing.variable = "sample",
+                            compare.by = c("Bleo", "PBS"))
+```
+
+```{r}
+DiffernetialEnrichResults(DEG.list, 
+              Macs2,
+              baseline = "IntMacs1", 
+              top.genes = 200)
+```
+

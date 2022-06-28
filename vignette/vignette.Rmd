@@ -2,6 +2,11 @@
 title: "Untitled"
 output: html_document
 ---
+```{r}
+convert.orthologs(genes = rownames(SeuratObj),
+                  from="Gene.HS", 
+                  to="Gene.MM")
+```
 
 
 ```{r}

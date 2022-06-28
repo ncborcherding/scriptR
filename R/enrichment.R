@@ -13,21 +13,21 @@
 #'
 #' 
 #' @examples 
-#' DEG.list <- Diffgene.lister(Macs2, 
+#' DEG.list <- diffgene.lister(Macs2, 
 #'                             ident.use = "idents", 
 #'                             comparing.variable = "sample",
 #'                             compare.by = c("Bleo", "PBS"))
 #'                             
-#' EnrichResults(DEG.list, 
-#'               Macs2,
-#'              baseline = "IntMacs1", 
-#'              top.genes = 200)
+#' differential.enrich.results <- (DEG.list, 
+#'                                  Macs2,
+#'                                  baseline = "IntMacs1", 
+#'                                  top.genes = 200)
 #' 
 #' @export
 #' @author Nick Borcherding
 #'
 #' @return graph or table of the enrichment results
-DifferentialEnrichResults <- function(marker.list, 
+differential.enrich.results <- function(marker.list, 
                           sc = NULL, 
                           baseline = NULL, 
                           top.genes = 200, 
@@ -152,7 +152,7 @@ processEnrich <- function(comparison,
 #'
 #' 
 #' @examples 
-#' DEG.list <- Diffgene.lister(Macs2, 
+#' DEG.list <- diffgene.lister(Macs2, 
 #'                             ident.use = "idents", 
 #'                             comparing.variable = "sample",
 #'                             compare.by = c("Bleo", "PBS"))
@@ -161,7 +161,7 @@ processEnrich <- function(comparison,
 #' @author Nick Borcherding
 #'
 #' @return graph or table of the enrichment results
-Diffgene.lister <- function(sc, 
+diffgene.lister <- function(sc, 
                             ident.use = "idents", 
                             comparing.variable = "sample",
                             compare.by = c("Bleo", "PBS"), 

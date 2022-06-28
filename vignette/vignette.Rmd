@@ -10,14 +10,14 @@ convert.orthologs(genes = rownames(SeuratObj),
 
 
 ```{r}
-DEG.list <- Diffgene.lister(Macs2, 
+DEG.list <- diffgene.lister(Macs2, 
                             ident.use = "idents", 
                             comparing.variable = "sample",
                             compare.by = c("Bleo", "PBS"))
 ```
 
 ```{r}
-DiffernetialEnrichResults(DEG.list, 
+differential.enrich.results(DEG.list, 
               Macs2,
               baseline = "IntMacs1", 
               top.genes = 200)

@@ -1,10 +1,10 @@
 
 library(scran)
 
-Reorganize single-cell objects lists to generate a sparse matrix
-sparse matrix list with the same genes organized by the top N 
-most highly variable genes. This is to minimize the memory 
-foot print before integration.
+Reorganize single-cell objects lists to generate a sparse matrix 
+list with the same genes organized by the top N most highly 
+variable genes. This is to minimize the memory foot print 
+before integration.
 
 kansas.city.shuffle <- function(sce.list,
                                 number.var.features = 2000,

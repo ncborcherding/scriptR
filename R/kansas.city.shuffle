@@ -1,0 +1,17 @@
+kansas.city.shuffle <- function(sce.list
+                                number.var.features = 2000) {
+  #Removing the counts data assay - this is not used for the fastMNN
+  sce.list <- lapply(sce.list, function(x) {
+    counts(x) <- NULL
+    x
+  })
+  #Combining the data
+  combined.experiments <- rbind(sce.list, deparse.level=1)
+  #Selecting the variable genes and subsetting the massive combined data
+  var.features <- modelGeneVar(combined.experiments)
+  genes <- getTopHVGs(combined.experiments, n=number.var.features)
+  combined.experiments <- combined.experiments[genes,]
+  #remaking a list to be used with fastMNN
+  new.sce.list <- split(combined.experiment, rowData(combined.experiment)$orig.ident)
+  return(new.sce.list)
+}
